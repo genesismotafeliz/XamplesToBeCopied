@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="tomenglertde.ResXManager.VSIX.Visuals.CodeGeneratorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
+             xmlns:toms="urn:TomsToolbox"
+             xmlns:model="urn:ResXManager.Model"
+             xmlns:vsix="clr-namespace:tomenglertde.ResXManager.VSIX"
+             d:DataContext="{d:DesignInstance model:ResourceEntity}">
+  <UserControl.Resources>
+    <toms:CompositeConverter x:Key="ObjectToIconConverter">
+      <toms:ObjectToTextConverter Key="Icon" />
+      <toms:StringToObjectConverter />
+    </toms:CompositeConverter>
+  </UserControl.Resources>
+  <Grid DataContext="{Binding NeutralProjectFile}" d:DataContext="{d:DesignInstance vsix:DteProjectFile}">
+    <Image Source="{Binding CodeGenerator, Converter={StaticResource ObjectToIconConverter}}"
+           ToolTip="{Binding CodeGenerator, Converter={x:Static toms:ObjectToDescriptionConverter.Default}}"
+           VerticalAlignment="Top"
+           HorizontalAlignment="Left" />
+  </Grid>
+</UserControl>
