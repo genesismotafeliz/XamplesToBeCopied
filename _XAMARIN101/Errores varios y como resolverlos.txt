@@ -1,0 +1,9 @@
+Errores varios y como resolverlos
+
+Error
+Unhandled Exception:
+
+System.TypeLoadException: Could not resolve type with token 010000a2 (from typeref, class/assembly Xamarin.Forms.Xaml.XamlResourceIdAttribute, Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null) occurred
+
+Solucion
+Este error suele dar al actualizar la version de Xamarin o al agregar algun plugin que no sea auto compatible con el app, solo elimina los bin y obj de los folders de tu proyecto y compil
